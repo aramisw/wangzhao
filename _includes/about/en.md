@@ -1,48 +1,62 @@
-> Your time is limited, so don’t waste it living someone else’s life. 
+> Do we know this world? 
 
-Hi, I am _@huxpro_ (Huang, Xuan), a [Facebook](https://www.facebook.com/) software engineer and a professed digital designer. My interests range from programming languages in general (type system, type-based formal verification, compiler construction, runtime system) to indurstial software engineering (web/mobile app development, user interface and UX, developer infra and DX). 
+Hi, I am Zhao Wang, I am a full time postdocs and lecturer in Xidian University, [Github](https://https://github.com/aramisw)、[Gitee](https://https://gitee.com/bloodtake).
 
-In the past, I worked on [Alitrip (Fliggy)](https://www.alitrip.com/) mobile and web apps under the [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group), found and lead front-end infrastructure team at a unicorn startup [Beijing Weiying (WePiao)](https://www.crunchbase.com/organization/beijing-weiying-technology), and helped [Ele.me](https://en.wikipedia.org/wiki/Ele.me) to upgrade their mobile web into [the first influential PWA (progressive web app) in China](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509).
+##### Research Topics
 
-I studied BA, Digital Media Art at [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) and MS, Computer Science at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology), with a focus on programming languages theory and construction.
-
-
-##### My Programming Languages Spectrum
-
-I generally prefer languages that are close to ML ("Meta Language"), i.e. _mostly functional programming_. This should explain most of my picks e.g. JavaScript within dynamically-typed's, Scala within JVM's, Rust within unmanaged's.
-
-> __Left-right__ is how much I prefer it.  __Top-down__ is how much I know it. __Versions__ are lower bounds.
-
-|     | 💔️           | ❤️ ️                   | ❤️❤️ ️             | ❤️❤️❤️ ️               |
-| --- | ------------- | ---------------------- | ------------------ | ---------------------- |
-| 😅  | `PHP` `BASIC` | `ObjC` `Prolog` `Hack` | `Kotlin` `Dart`    | `Swift` `Agda` `Idris` |
-| 🧐  |               | `Asm` `C++`  `Lisp*`   | `C++11` `C#` `AS3` | `Scala` `Rust`         |
-| 😏  | `Shell`       | `C` `Java` `Python`    | `Typed JS*` `Wasm` | `Haskell` `Coq` `ML*`  |
-| 🤓  |               | `JavaScript`           | `ECMAScript6`      | `λ` `Λ` `Π` `Σ`        |
-
-> __`ML*`__: `OCaml` `ReasonML` `Standard ML`  
-> __`Lisp*`__: `Clojure` `Scheme` `Racket`  
-> __`Typed JS*`__：`Flow` `TypeScript`
+- [Multiobjective Optimization][1]
+- [Evolutionary Algorithm][2]
+- [Deep Learning][3]
+- [Complex Network][4]
+- [Emitter Recognization][5]
 
 
-##### Talks
+##### Publications
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf China Shanghai 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI Guangzhou 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux Beijing 2017
-- PWA Rehashing · Baidu HQ Beijing 2017
-- [Service Worker 101][5] · GDG DevFest Beijing 2016
-- [Progressive Web Apps][4] · QCon Shanghai 2016
-- Progressive Web App in my POV · GDG IO Redux Beijing 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript Modularization Journey][1] · 2015
+\[1\]  [A Similarity-Based Multiobjective Evolutionary Algorithm for Deployment Optimization of Near Space Communication System][6], Maoguo Gong (Ph. D supervisor), Zhao Wang, Zexuan Zhu, Licheng Jiao, IEEE Transactions on Evolutionary Computation, Vol. 21, No. 6, 2016: 878-897. (2019IF：8.124).
 
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
+
+\[2\]  [Dynamic Deployment Optimization of Near Space Communication System Using a Novel Estimation of Distribution Algorithm][7], Zhao Wang, Maoguo Gong, Applied Soft Computing, Vol. 78, 2019: 569-582. (2019IF：3.907).
+
+
+\[3\]  [A Memetic Algorithm based on MOEA/D for Near Space Communication System Deployment Optimization on Tide User Model][8], Zhao Wang, Maoguo Gong, Yu Lei, Shanfeng Wang, Linzhi Su, IEEE Congress on Evolutionary Computation, 2016: 3614-3621.
+
+
+\[4\]  [Deployment Optimization of Near Space Airships based on MOEA/D with Local Search][9], Zhao Wang, Maoguo Gong, Qing Cai, Lijia Ma, Licheng Jiao, IEEE Congress on Evolutionary Computation, 2014: 2345-2352.
+
+
+\[5\]  [Decision Variable Analysis based on Distributed Computing][10], Zhao Wang, Maoguo Gong, Tian Xie, International Conference on Bio-Inspired Computing: Theories and Applications, 2017: 447-455.
+
+
+\[6\]  [Detecting Multiple Changes from Multi-Temporal Images by Using Stacked Denosing Autoencoder Based Change Vector Analysis][11]. Linzhi Su, Jiao Shi, Puzhao Zhang, Zhao Wang, Maoguo Gong, International Joint Conference on Neural Networks. 2016: 1269-1276.
+
+
+\[7\]  [A Novel Bi-Objective Model with Particle Swarm Optimizer for Structural Balance Analytics in Social Networks][12], Jianan Yan, Shasha Ruan, Qing Cai, Jiao Shi, Zhao Wang, Maoguo Gong, IEEE Congress on Evolutionary Computation, 2016: 728-735.
+
+
+\[8\]  [Enhancing Evolutionary Multifactorial Optimization based on Particle Swarm Optimization][13], Tian Xie, Maoguo Gong, Zedong Tang, Yu Lei, Jia Liu, Zhao Wang, IEEE Congress on Evolutionary Computation, 2016: 1658-1665.
+
+
+\[9\]  [Deep Community Detection based on Memetic Algorithm][14], Shanfeng Wang, Maoguo Gong, Bo Shen, Zhao Wang, Qing Cai, Licheng Jiao, IEEE Congress on Evolutionary Computation, 2015: 648-655.
+
+
+\[10\] [A Memetic Algorithm based on Immune Multi-Objective Optimization for Flexible Job-shop Scheduling Problems][15],Jingjing Ma, Yu Lei, Zhao Wang, Licheng Jiao, Ruochen Liu. IEEE Congress on Evolutionary Computation, 2014:58-65.
+
+
+
+[1]: https://baike.baidu.com/item/%E5%A4%9A%E7%9B%AE%E6%A0%87%E8%A7%84%E5%88%92/5022854?fr=aladdin
+[2]: https://baike.baidu.com/item/%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95
+[3]: https://baike.baidu.com/item/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/3729729
+[4]: https://baike.baidu.com/item/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C
+[5]: https://baike.baidu.com/item/%E9%9B%B7%E8%BE%BE%E8%BE%90%E5%B0%84%E6%BA%90%E8%AF%86%E5%88%AB/14093005
+[6]: https://ieeexplore.ieee.org/document/7891507
+[7]: https://www.sciencedirect.com/science/article/pii/S1568494619301097
+[8]: https://ieeexplore.ieee.org/document/7744247
+[9]: https://ieeexplore.ieee.org/document/6900334
+[10]: https://link.springer.com/chapter/10.1007%2F978-981-10-3611-8_40
+[11]: https://ieeexplore.ieee.org/abstract/document/7727343
+[12]: https://ieeexplore.ieee.org/document/7743864
+[13]: https://ieeexplore.ieee.org/document/7743987
+[14]: https://ieeexplore.ieee.org/document/7256952
+[15]: https://ieeexplore.ieee.org/document/6900331
+
