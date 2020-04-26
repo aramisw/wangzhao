@@ -11,16 +11,28 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员">
+    <meta property="og:title" content="Ubuntu系统字体命令和字体的安装 - 王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员">
     
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="我们怀念的不是时光，而是时光中的自己">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。
+">
+    
+    <meta property="article:published_time" content="2020-04-27T07:00:00Z">
+    
+    
+    <meta property="article:author" content="Zhao Wang">
+    
+    
+    <meta property="article:tag" content="Ubuntu">
+    
+    <meta property="article:tag" content="系统字体">
+    
     
     <meta property="og:image" content="http://localhost:4000/img/img047.jpg">
-    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:url" content="http://localhost:4000/2020/04/27/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%AE%89%E8%A3%85/">
     <meta property="og:site_name" content="王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员">
     
-    <title>王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员</title>
+    <title>Ubuntu系统字体命令和字体的安装 - 王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -29,7 +41,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/2020/04/27/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%AE%89%E8%A3%85/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -163,102 +175,182 @@
 </script>
 
 
-    <!-- Page Header -->
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home_bg.jpeg" width="0" height="0"> -->
+
+<!-- Post Header -->
 
 
 
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home_bg.jpeg');
+        background: ;
+    }
 
+    
+</style>
 
+<header class="intro-header" >
 
-
-<header class="intro-header" style="background-image: url('/img/home_bg.jpeg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="site-heading">
-        
-          <h1>Wang Zhao</h1>
-          <span class="subheading">我们怀念的不是时光，而是时光中的自己</span>
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Ubuntu" title="Ubuntu">Ubuntu</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93" title="系统字体">系统字体</a>
+                        
+                    </div>
+                    <h1>Ubuntu系统字体命令和字体的安装</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Zhao Wang on April 27, 2020</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
 
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<p>网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。</p>
+
+<p>#安装mkfontscale,mkfontdir和fc-cache命令
+如果运行mkfontscale命令时终端提示<code class="highlighter-rouge">mkfontscale: command not found</code>，则需要首先安装这个命令，安装方法如下：</p>
+
+<p>Ubuntu环境下使用如下命令安装：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre># 使mkfontscale和mkfontdir命令正常运行
+sudo apt-get install ttf-mscorefonts-installer
+# 使fc-cache命令正常运行
+sudo apt-get install fontconfig
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在Cent OS下运行如下命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre># 使mkfontscale和mkfontdir命令正常运行
+yum install mkfontscale 
+# 使fc-cache命令正常运行。如果提示 fc-cache: command not found
+yum install fontconfig #安装字体 如果系统中没有中文字体，需要先行安装中文字体，在Ubuntu和Cent OS中的安装步骤如下：
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>从网络上下载字体或者直接从其他计算机（windows）上拷贝</li>
+  <li>
+    <p>建立<code class="highlighter-rouge">/usr/share/fonts/myfonts</code> 目录</p>
+
+    <p>cd /usr/share/fonts/
+ # 如果fonts/目录不存在，则创建
+ mkdir fonts
+ mkdir myfonts</p>
+  </li>
+  <li>
+    <p>把下载好的字体拷贝到/usr/share/fonts/myfonts目录下：</p>
+
+    <p>sudo cp ~/myfonts/* /usr/share/fonts/myfonts/<br />
+ # ~/myfonts/ 是保存字体的目录</p>
+  </li>
+  <li>
+    <p>修改字体文件的权限，使root用户以外的用户也可以使用</p>
+
+    <p>cd /usr/share/fonts/
+ sudo chmod -R myfonts 755</p>
+  </li>
+  <li>
+    <p>建立字体缓存</p>
+
+    <p>mkfontscale
+ # 如果提示 mkfontscale: command not found
+ # 在Ubuntu下运行如下命令
+ # sudo apt-get install ttf-mscorefonts-installer
+ # 在cent os下运行如下命令
+ # yum install mkfontscale 
+ mkfontdir
+ fc-cache -fv 
+ # 如果提示 fc-cache: command not found
+ # 在Ubuntu下运行如下命令
+ # sudo apt-get install fontconfig
+ # 在cent os下运行如下命令
+ # yum install fontconfig
+至此字体就安装成功了，如果需要安装其他字体，只需将字体拷贝到字体目录下，重新运行以上的命令即可。</p>
+  </li>
+</ol>
+
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/27/Vim-%E6%8F%92-%E4%BB%B6-%E7%9A%84-%E5%BA%94-%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="Vim插件的应用">
+                        Next<br>
+                        <span>Vim插件的应用</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/2020/04/27/Vim-%E6%8F%92-%E4%BB%B6-%E7%9A%84-%E5%BA%94-%E7%94%A8/">
-        <h2 class="post-title">
-            Vim插件的应用
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                当没有插件管理器时，Vim 用户必须手动下载 tarball 包形式的插件，并将它们解压到 ~/.vim 目录中。在少量插件的时候可以。但当他们安装更多的插件时，就会变得一团糟。所有插件文件分散在单个目录中，用户无法找到哪个文件属于哪个插件。此外，他们无法找到他们应该删除哪个文件来卸载插件。这时 Vim 插件管理器就可以派上用场。插件管理器将安装插件的文件保存在单独的目录中，因此管理所有插件...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 27, 2020
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2020/04/27/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%AE%89%E8%A3%85/">
-        <h2 class="post-title">
-            Ubuntu系统字体命令和字体的安装
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。
-
-#安装mkfontscale,mkfontdir和fc-cache命令
-如果运行mkfontscale命令时终端提示mkfontscale: command not found...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 27, 2020
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
 
 
 <section>
+    
+        <hr class="hidden-sm hidden-xs">
     
     <h5><a href="/archive/">FEATURED TAGS</a></h5>
     <div class="tags">
@@ -271,59 +363,71 @@
 </section>
 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img src="/img/img047.jpg" />
-    
-    
-    <p>Life consumes feeling <br> 生活的味道需要反复揣摩</p>
-    
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/wangzhao519">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/aramisw">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-  </div>
-</section>
-
                 <!-- Friends Blog -->
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "wangzhao";
+    var disqus_identifier = "/2020/04/27/Ubuntu系统字体命令和字体的安装";
+    var disqus_url = "http://localhost:4000/2020/04/27/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%AE%89%E8%A3%85/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
 
