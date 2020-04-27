@@ -1,0 +1,10 @@
+I"<p>网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。</p>
+<h1 id="安装mkfontscalemkfontdir和fc-cache命令">安装mkfontscale,mkfontdir和fc-cache命令</h1>
+<p>如果运行mkfontscale命令时终端提示<code class="highlighter-rouge">mkfontscale: command not found</code>，则需要首先安装这个命令，安装方法如下：
+Ubuntu环境下使用如下命令安装：
+	# 使mkfontscale和mkfontdir命令正常运行
+	sudo apt-get install ttf-mscorefonts-installer
+	# 使fc-cache命令正常运行
+	sudo apt-get install fontconfig
+在Cent OS下运行如下命令：</p>
+:ET

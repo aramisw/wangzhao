@@ -1,21 +1,13 @@
-I"<p>网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。</p>
-
-<p>#安装mkfontscale,mkfontdir和fc-cache命令
-如果运行mkfontscale命令时终端提示<code class="highlighter-rouge">mkfontscale: command not found</code>，则需要首先安装这个命令，安装方法如下：</p>
-
-<p>Ubuntu环境下使用如下命令安装：</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre># 使mkfontscale和mkfontdir命令正常运行
-sudo apt-get install ttf-mscorefonts-installer
-# 使fc-cache命令正常运行
-sudo apt-get install fontconfig
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>在Cent OS下运行如下命令：</p>
+I"9
+<p>网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。</p>
+<h1 id="安装mkfontscalemkfontdir和fc-cache命令">安装mkfontscale,mkfontdir和fc-cache命令</h1>
+<p>如果运行mkfontscale命令时终端提示<code class="highlighter-rouge">mkfontscale: command not found</code>，则需要首先安装这个命令，安装方法如下：
+Ubuntu环境下使用如下命令安装：
+	# 使mkfontscale和mkfontdir命令正常运行
+	sudo apt-get install ttf-mscorefonts-installer
+	# 使fc-cache命令正常运行
+	sudo apt-get install fontconfig
+在Cent OS下运行如下命令：</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -24,7 +16,7 @@ sudo apt-get install fontconfig
 </pre></td><td class="rouge-code"><pre># 使mkfontscale和mkfontdir命令正常运行
 yum install mkfontscale 
 # 使fc-cache命令正常运行。如果提示 fc-cache: command not found
-yum install fontconfig #安装字体 如果系统中没有中文字体，需要先行安装中文字体，在Ubuntu和Cent OS中的安装步骤如下：
+yum install fontconfig # 安装字体 如果系统中没有中文字体，需要先行安装中文字体，在Ubuntu和Cent OS中的安装步骤如下：
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ol>
