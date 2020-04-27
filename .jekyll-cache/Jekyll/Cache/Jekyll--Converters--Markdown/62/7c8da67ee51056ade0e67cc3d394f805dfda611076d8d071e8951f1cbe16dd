@@ -1,0 +1,224 @@
+I"�3<h1 id="关于-valine-模块">关于 Valine 模块</h1>
+<p>之所以选择 Valine 模块，一方面因为 Valine 评论模块延续了Jekyll和Hexo模板简洁的风格，两者匹配得可谓天衣无缝，另一方面国内可选的评论模块有些已经不再支持，有些模块的UI不太喜欢。
+Valine 诞生于2017年8月7日，是一款基于 Leancloud 的快速、简洁且高效的无后端评论系统，支持但不限于静态博客。具有以下特性：</p>
+
+<ul>
+  <li>快速</li>
+  <li>安全</li>
+  <li>Emoji</li>
+  <li>无后端实现</li>
+  <li>MarkDown 全语法支持</li>
+  <li>轻量易用(~15kb gzipped)</li>
+  <li>文章阅读量统计 v1.2.0+
+    <h1 id="valine-部署">Valine 部署</h1>
+    <p>Valine 是基于 leancloud国际版的评论模块，评论数据都存储在 Leancloud 平台，因此需要先在 leancloud 申请帐号。（国内版无域名的，将停止服务）。</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>申请 Leancloud 帐号
+申请 Leancloud 步骤比较简单，首先进行 Leancloud 控制台创建应用(个人使用开发版)，之后获取应用的 App ID 和 App Key，后面配置博客的主题配置文件会用到。</p>
+  </li>
+  <li>
+    <p>配置安全域名
+登录leancloud控制台，选择 设置 -&gt; 安全中心 -&gt; Web 安全域名，这里设置成博客的域名地址和本地地址即可，如图:</p>
+  </li>
+</ol>
+
+<h1 id="配置jekyll主题配置文件">配置Jekyll主题配置文件</h1>
+<p>修改博客主题配置文件 _config.yml，方便灵活的enable/disable评论功能。配置 Valine 的 enable、appid、appkey 等参数，添加代码如下:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre># Valine评论系统开关
+# Valine.
+# You can get your appid and appkey from https://leancloud.app
+# more info please open https://valine.js.org
+valine:
+ 	enable: true
+  	appid:  xxxxxxxx # your leancloud app id
+  	appkey: xxxxxxxx # your leancloud app key
+  	notify: true # mail notifier , https://github.com/xCss/Valine/wiki，v1.4.0+ 已废弃
+  	verify: true # Verification code，v1.4.0+ 已废弃
+  	placeholder: 非Github帐号登录用户，在此处留言 # comment box placeholder
+  	avatar:   # gravatar style
+ 	guest_info: 昵称,邮件,网址 # custom comment header
+  	pageSize: 10 # pagination size
+  	# path: window.location.pathname #  v1.4.0+不要使用参数“app_key: 'LHvLGcwcauE5B2JpMxJ3lbtF',”
+  	recordIP: true # 是否记录评论者IP
+  	enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭 以上的 appid和appkey为本文开始在Leancloud创建应用的 App ID 和 App Key。
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在Jekyll站点的_includes目录下创建valine_comments.html文件。文件内容如下([]替换为{})：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre>&lt;br&gt;
+&lt;h4 align="left"&gt;「游客及非Github用户留言」：&lt;/h4&gt;    
+&lt;div id="comments"&gt;&lt;/div&gt;
+    &lt;!--Leancloud 操作库:--&gt;
+    &lt;script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"&gt;&lt;/script&gt;
+    &lt;!--Valine 的核心代码库:--&gt;
+    &lt;script src='//unpkg.com/valine/dist/Valine.min.js'&gt;&lt;/script&gt;
+    &lt;script&gt;
+	 new Valine([
+	    av: AV,
+	    el: '#comments',
+	    app_id: '[[ site.valine.appid ]]',
+	    app_key: '[[ site.valine.appkey ]]',
+	    placeholder: '[[ site.valine.placeholder ]]',
+	    notify: '[[ site.valine.notify ]]',
+	    verify: '[[ site.valine.verify ]]',
+	    recordIP: 'true',
+	    enableQQ: 'true',
+	])
+    &lt;/script&gt; 在post.html文件末尾后面（或你认为合适的位置）添加代码引用valine_comments.html来显示评论框([]替换为{})：
+
+&lt;!-- Valine 评论框 start --&gt;
+[% if site.valine.enable %]
+[% include valine_comments.html %]
+[% endif %]
+&lt;!-- Valine 评论框 end --&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>以上就是 Valine 模块的基本部署过程。</p>
+
+<h1 id="开启-valine-评论邮件通知">开启 Valine 评论邮件通知</h1>
+<p>以上使用 Valine 模块实现了最基本的评论功能，但功能还需要完善，例如评论邮件通知、评论管理等功能，正好 Valine Admin 可以满足需求，Valine Admin 是Valine评论模块的扩展和增强。</p>
+
+<p>这块内容主要参考 valine-admin-document。</p>
+
+<p>近期更改了Github用户名请留意，仓库链接更新为https://github.com/DesertsP/Valine-Admin.git</p>
+
+<ol>
+  <li>
+    <p>云引擎”一键”部署
+在Leancloud云引擎设置界面，填写代码库并保存：https://github.com/DesertsP/Valine-Admin.git</p>
+  </li>
+  <li>
+    <p>在设置页面，设置环境变量以及 Web 二级域名。</p>
+  </li>
+</ol>
+
+<p>环境变量</p>
+
+<p>变量	示例	说明
+|SITE_NAME	|Deserts	|[必填]博客名称
+|SITE_URL	|https://panjunwen.com	|[必填]首页地址
+|SMTP_SERVICE	|QQ	|[新版支持]邮件服务提供商，支持 QQ、163、126、Gmail 以及 更多
+|SMTP_USER	|xxxxxx@qq.com	|[必填]SMTP登录用户
+|SMTP_PASS	|ccxxxxxxxxch	|[必填]SMTP登录密码（QQ邮箱需要获取独立密码）
+|SENDER_NAME	|Deserts	|[必填]发件人
+|SENDER_EMAIL	|xxxxxx@qq.com	|[必填]发件邮箱
+|ADMIN_URL	|https://xxx.leanapp.cn/	|[建议]Web主机二级域名，用于自动唤醒
+|BLOGGER_EMAIL	|xxxxx@gmail.com	|[可选]博主通知收件地址，默认使用SENDER_EMAIL
+|AKISMET_KEY	|xxxxxxxxxxxx	|[可选]Akismet Key 用于垃圾评论检测，设为MANUAL_REVIEW开启人工审核，留空不使用反垃圾
+以上必填参数请务必正确设置。</p>
+
+<p>二级域名用于评论后台管理，如https://deserts.leanapp.us 。</p>
+
+<p>二级域名</p>
+
+<ol>
+  <li>切换到部署标签页，分支使用master，点击部署即可</li>
+</ol>
+
+<p>第一次部署需要花点时间。</p>
+
+<ol>
+  <li>评论管理。访问设置的二级域名https://二级域名.leanapp.us/sign-up，注册管理员登录信息，如：https://deserts.leanapp.us/sign-up
+注：使用原版Valine如果遇到注册页面不显示直接跳转至登录页的情况，请手动删除_User表中的全部数据。</li>
+</ol>
+
+<p>此后，可以通过https://二级域名.leanapp.us/管理评论。</p>
+
+<ol>
+  <li>定时任务设置</li>
+</ol>
+
+<p>目前实现了两种云函数定时任务：(1)自动唤醒，定时访问Web APP二级域名防止云引擎休眠；(2)每天定时检查24小时内漏发的邮件通知。</p>
+
+<p>进入云引擎-定时任务中，创建定时器，创建两个定时任务。</p>
+
+<p>选择self-wake云函数，Cron表达式为0 0/30 7-23 * * ?，表示每天早6点到晚23点每隔30分钟访问云引擎，ADMIN_URL环境变量务必设置正确：</p>
+
+<p>选择resend-mails云函数，Cron表达式为0 0 8 * * ?，表示每天早8点检查过去24小时内漏发的通知邮件并补发：</p>
+
+<p>添加定时器后记得点击启动方可生效。</p>
+
+<p>至此，Valine Admin 已经可以正常工作，更多以下是可选的进阶配置。</p>
+
+<p>邮件通知模板在云引擎环境变量中设定，可自定义通知邮件标题及内容模板。</p>
+
+<p>环境变量	示例	说明
+|MAIL_SUBJECT	|${PARENT_NICK}，您在${SITE_NAME}上的评论收到了回复	|[可选]@通知邮件主题（标题）模板
+|MAIL_TEMPLATE	|见下文	|[可选]@通知邮件内容模板
+|MAIL_SUBJECT_ADMIN	|${SITE_NAME}上有新评论了	|[可选]博主邮件通知主题模板
+|MAIL_TEMPLATE_ADMIN	|见下文	|[可选]博主邮件通知内容模板
+邮件通知包含两种，分别是被@通知和博主通知，这两种模板都可以完全自定义。默认使用经典的蓝色风格模板（样式来源未知）。</p>
+
+<p>默认被@通知邮件内容模板如下：</p>
+
+<p><code class="highlighter-rouge">&lt;div style="border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;"&gt;&lt;h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;"&gt;您在&lt;a style="text-decoration:none;color: #12ADDB;" href="${SITE_URL}" target="_blank"&gt;            ${SITE_NAME}&lt;/a&gt;上的评论有了新的回复&lt;/h2&gt; ${PARENT_NICK} 同学，您曾发表评论：&lt;div style="padding:0 12px 0 12px;margin-top:18px"&gt;&lt;div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;"&gt;            ${PARENT_COMMENT}&lt;/div&gt;&lt;p&gt;&lt;strong&gt;${NICK}&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;"&gt; ${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style="text-decoration:none; color:#12addb" href="${POST_URL}" target="_blank"&gt;查看回复的完整內容&lt;/a&gt;，欢迎再次光临&lt;a style="text-decoration:none; color:#12addb" href="${SITE_URL}" target="_blank"&gt;${SITE_NAME}&lt;/a&gt;。&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></p>
+
+<p>@通知模板中的可用变量如下（注，这是邮件模板变量，是指嵌入到HTML邮件模板中的变量，请勿与云引擎环境变量混淆）：</p>
+
+<p>模板变量	说明
+|SITE_NAME	|博客名称
+|SITE_URL	|博客首页地址
+|POST_URL	|文章地址（完整路径）
+|PARENT_NICK	|收件人昵称（被@者，父级评论人）
+|PARENT_COMMENT	|父级评论内容
+|NICK	|新评论者昵称
+|COMMENT	|新评论内容
+默认博主通知邮件内容模板如下：</p>
+
+<p><code class="highlighter-rouge">&lt;div style="border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;"&gt;&lt;h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;"&gt;您在&lt;a style="text-decoration:none;color: #12ADDB;" href="${SITE_URL}" target="_blank"&gt;${SITE_NAME}&lt;/a&gt;上的文章有了新的评论&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;${NICK}&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;"&gt; ${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style="text-decoration:none; color:#12addb" href="${POST_URL}" target="_blank"&gt;查看回复的完整內容&lt;/a&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></p>
+
+<p>博主通知邮件模板中的可用变量与@通知中的基本一致，<code class="highlighter-rouge">PARENT_NICK</code> 和 <code class="highlighter-rouge">PARENT_COMMENT</code> 变量不再可用。</p>
+
+<p>这里还提供一个彩虹风格的@通知邮件模板代码：</p>
+
+<p><code class="highlighter-rouge">&lt;div style="border-radius: 10px 10px 10px 10px;font-size:13px;    color: #555555;width: 666px;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;margin:50px auto;border:1px solid #eee;max-width:100%;background: #ffffff repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);"&gt;&lt;div style="width:100%;background:#49BDAD;color:#ffffff;border-radius: 10px 10px 0 0;background-image: -moz-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));background-image: -webkit-linear-gradient(0deg, rgb(67, 198, 184), rgb(255, 209, 244));height: 66px;"&gt;&lt;p style="font-size:15px;word-break:break-all;padding: 23px 32px;margin:0;background-color: hsla(0,0%,100%,.4);border-radius: 10px 10px 0 0;"&gt;您在&lt;a style="text-decoration:none;color: #ffffff;" href="${SITE_URL}"&gt; ${SITE_NAME}&lt;/a&gt;上的留言有新回复啦！&lt;/p&gt;&lt;/div&gt;&lt;div style="margin:40px auto;width:90%"&gt;&lt;p&gt;${PARENT_NICK} 同学，您曾在文章上发表评论：&lt;/p&gt;&lt;div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;"&gt;${PARENT_COMMENT}&lt;/div&gt;&lt;p&gt;${NICK} 给您的回复如下：&lt;/p&gt;&lt;div style="background: #fafafa repeating-linear-gradient(-45deg,#fff,#fff 1.125rem,transparent 1.125rem,transparent 2.25rem);box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);margin:20px 0px;padding:15px;border-radius:5px;font-size:14px;color:#555555;"&gt;${COMMENT}&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style="text-decoration:none; color:#12addb" href="${POST_URL}#comments"&gt;查看回复的完整內容&lt;/a&gt;，欢迎再次光临&lt;a style="text-decoration:none; color:#12addb"                href="${SITE_URL}"&gt; ${SITE_NAME}&lt;/a&gt;。&lt;/p&gt;&lt;style type="text/css"&gt;a:link{text-decoration:none}a:visited{text-decoration:none}a:hover{text-decoration:none}a:active{text-decoration:none}&lt;/style&gt;&lt;/div&gt;&lt;/div&gt;</code></p>
+
+:ET
