@@ -73,6 +73,24 @@ valine_comment:
 # placeholde
   placeholder: “欢迎提出您的宝贵意见"
 
+# Valine评论系统开关
+# Valine.
+# You can get your appid and appkey from https://leancloud.app
+# more info please open https://valine.js.org
+valine:
+  enable: true
+  appid:  qI4vMbBiwd68BvANnG48ltpp-gzGzoHsz # your leancloud app id
+  appkey: XsTkpgL72eQdtrWCctgUv2Ph # your leancloud app key
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki，v1.4.0+ 已废弃
+  verify: false # Verification code，v1.4.0+ 已废弃
+  placeholder: 非Github帐号登录用户，在此处留言 # comment box placeholder
+  avatar:   # gravatar style
+  guest_info: 昵称,邮件,网址 # custom comment header
+  pageSize: 10 # pagination size
+  # path: window.location.pathname #  v1.4.0+不要使用参数“app_key: 'LHvLGcwcauE5B2JpMxJ3lbtF',”
+  recordIP: true # 是否记录评论者IP
+  enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+
 # Analytics settings
 # Baidu Analytics 
 # ba_track_id: [your track id]
