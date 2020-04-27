@@ -192,6 +192,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 
 
+
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
@@ -423,6 +424,32 @@ https://github.com/kitian616/jekyll-TeXt-theme
 
 <!-- Multi-Lingual -->
 
+
+<!-- Valine 评论框 start -->
+
+<br>
+<h4 align="left">「游客及非Github用户留言」：</h4>    
+<div id="comments"></div>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+         new Valine({
+            av: AV,
+            el: '#comments',
+            app_id: 'qI4vMbBiwd68BvANnG48ltpp-gzGzoHsz',
+            app_key: 'XsTkpgL72eQdtrWCctgUv2Ph',
+            placeholder: '非Github帐号登录用户，在此处留言',
+            notify: 'false',
+            verify: 'false',
+	    recordIP: 'true',
+            enableQQ: 'true',
+        })
+    </script>
+
+
+<!-- Valine 评论框 end -->
 
 
 
