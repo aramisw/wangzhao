@@ -2,7 +2,10 @@
 
 Hi, I am Zhao Wang, I am a full time postdocs and lecturer in Xidian University, [Github](https://https://github.com/aramisw)、[Gitee](https://https://gitee.com/bloodtake).
 
-##### Research Topics
+# Contact
+E-mail: wangzhao@xidian.edu.cn
+
+# Research Topics
 
 - [Multiobjective Optimization][1]
 - [Evolutionary Algorithm][2]
@@ -11,7 +14,7 @@ Hi, I am Zhao Wang, I am a full time postdocs and lecturer in Xidian University,
 - [Emitter Recognization][5]
 
 
-##### Publications
+# Publications
 
 \[1\]  [A Similarity-Based Multiobjective Evolutionary Algorithm for Deployment Optimization of Near Space Communication System][6], Maoguo Gong (Ph. D supervisor), Zhao Wang, Zexuan Zhu, Licheng Jiao, IEEE Transactions on Evolutionary Computation, Vol. 21, No. 6, 2016: 878-897. (2019IF：8.124).
 
@@ -41,6 +44,9 @@ Hi, I am Zhao Wang, I am a full time postdocs and lecturer in Xidian University,
 
 
 \[10\] [A Memetic Algorithm based on Immune Multi-Objective Optimization for Flexible Job-shop Scheduling Problems][15],Jingjing Ma, Yu Lei, Zhao Wang, Licheng Jiao, Ruochen Liu. IEEE Congress on Evolutionary Computation, 2014:58-65.
+
+# Funding
+I am in charge of a project of the National Key Laboratory Fundings
 
 
 

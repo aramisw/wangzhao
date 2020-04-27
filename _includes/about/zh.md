@@ -2,8 +2,11 @@
 
 Hi，我是王钊，目前就职于西安电子科技大学，电子工程学院，讲师，博士后，[Github](https://https://github.com/aramisw)、[Gitee](https://https://gitee.com/bloodtake)。
 
+# 联络信息
+E-mail: wangzhao@xidian.edu.cn
 
-##### 主要研究方向
+
+# 主要研究方向
 
 
 
@@ -15,7 +18,7 @@ Hi，我是王钊，目前就职于西安电子科技大学，电子工程学院
 
 
 
-##### 主要发表的论文
+# 主要发表的论文
  \[1\]  [A Similarity-Based Multiobjective Evolutionary Algorithm for Deployment Optimization of Near Space Communication System][6], Maoguo Gong (Ph. D supervisor), Zhao Wang, Zexuan Zhu, Licheng Jiao, IEEE Transactions on Evolutionary Computation, Vol. 21, No. 6, 2016: 878-897. （中科院SCI分区一区，2019IF：8.124）.
 
 
@@ -45,6 +48,8 @@ Hi，我是王钊，目前就职于西安电子科技大学，电子工程学院
 
  \[10\] [A Memetic Algorithm based on Immune Multi-Objective Optimization for Flexible Job-shop Scheduling Problems][15],Jingjing Ma, Yu Lei, Zhao Wang, Licheng Jiao, Ruochen Liu. IEEE Congress on Evolutionary Computation, 2014:58-65.
 
+# 基金
+目前主持重点实验室基金一项
 
 
 [1]: https://baike.baidu.com/item/%E5%A4%9A%E7%9B%AE%E6%A0%87%E8%A7%84%E5%88%92/5022854?fr=aladdin

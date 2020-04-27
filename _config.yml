@@ -64,7 +64,19 @@ disqus_username: wangzhao
 # Netease settings
 netease_comment: false
 
-
+valine:
+  enable: true
+  appid: <qI4vMbBiwd68BvANnG48ltpp-gzGzoHsz>
+  appkey: <XsTkpgL72eQdtrWCctgUv2Ph>
+  notify: false
+  verify: false
+  placeholder: <请留下你的脚印>
+  avatar: mm
+  guest_info: nick,mail,link
+  pageSize: 10
+  language: zh-cn
+  visitor: false
+  comment_count: true
 
 # Analytics settings
 # Baidu Analytics 
