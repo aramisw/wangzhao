@@ -384,25 +384,6 @@ call plug#end()
 
 
 
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "wangzhao";
-    var disqus_identifier = "/2020/04/27/Vim插件的应用";
-    var disqus_url = "http://localhost:4000/2020/04/27/Vim%E6%8F%92%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-
-
-
-
 <!-- async load function -->
 <script>
     function async(u, c) {
@@ -436,6 +417,21 @@ call plug#end()
         }
     }
 </style>
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '页面 ID', // 可选。默认为 location.href
+  owner: 'aramisw@126.com',
+  repo: 'https://github.com/aramisw/wangzhao',
+  oauth: {
+    client_id: '4aee751e34931eecaeb6',
+    client_secret: 'ee6b7d0794c39db187d1b4af92e71870c9232294',
+  },
+})
+gitment.render('container')
+</script>
 
 
 
