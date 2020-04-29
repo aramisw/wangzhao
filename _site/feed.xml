@@ -5,9 +5,196 @@
     <description>工具小屋 | 人工智能会改变世界 | 生活的味道需要反复揣摩</description>
     <link>https://wangzhao.press/</link>
     <atom:link href="https://wangzhao.press/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 29 Apr 2020 10:04:11 +0800</pubDate>
-    <lastBuildDate>Wed, 29 Apr 2020 10:04:11 +0800</lastBuildDate>
+    <pubDate>Wed, 29 Apr 2020 15:56:46 +0800</pubDate>
+    <lastBuildDate>Wed, 29 Apr 2020 15:56:46 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>使用360浏览器及AI插件实现保护内容下载</title>
+        <description>&lt;p&gt;最近需要下载一个网站上的受保护内容，然而网站并不想让用户下载。那么可以采用一些技巧实现对内容的下载&lt;/p&gt;
+
+&lt;h1 id=&quot;源内容分析&quot;&gt;源内容分析&lt;/h1&gt;
+
+&lt;p&gt;在360浏览器内按F12，打开代码分析窗口，打开SRC标签页，在Files里可以看到加载的内容，源文件应该是PDF，但是网站为了保护内容，传输过来的都是图片，将内容拉到底，让页面完整加载。&lt;/p&gt;
+
+&lt;h1 id=&quot;插件选择&quot;&gt;插件选择&lt;/h1&gt;
+
+&lt;p&gt;360浏览器里有很多图片下载插件，但是很多插件无法识别出所有的图片，这里推荐AI图片插件，可以实现所有图片的感知&lt;/p&gt;
+
+&lt;h1 id=&quot;图片筛选&quot;&gt;图片筛选&lt;/h1&gt;
+
+&lt;p&gt;AI图片插件识别后，可以通过设置图片尺寸过滤器来筛选出所需图片&lt;/p&gt;
+
+&lt;h1 id=&quot;图片下载及整合&quot;&gt;图片下载及整合&lt;/h1&gt;
+
+&lt;p&gt;下载下来后可以用Adobe DC来将所有图片直接整合到一个PDF中，最后调整顺序就可以了。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Apr 2020 07:00:00 +0800</pubDate>
+        <link>https://wangzhao.press/2020/04/30/%E4%BD%BF%E7%94%A8360%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8AAI%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%BF%9D%E6%8A%A4%E5%86%85%E5%AE%B9%E4%B8%8B%E8%BD%BD/</link>
+        <guid isPermaLink="true">https://wangzhao.press/2020/04/30/%E4%BD%BF%E7%94%A8360%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8AAI%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%BF%9D%E6%8A%A4%E5%86%85%E5%AE%B9%E4%B8%8B%E8%BD%BD/</guid>
+        
+        <category>360浏览器</category>
+        
+        <category>AI插件</category>
+        
+        <category>保护内容下载</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>利用SSH实现Ubuntu和手机互相发消息的方法</title>
+        <description>&lt;p&gt;Ubuntu上不能装各种各样的即时通讯软件，并且即使能够用wine，也有各种各样的bug，因此最好的方法就是用原生的方法实现通讯。这里我们采用SSH实现ubuntu与手机的通讯。&lt;/p&gt;
+
+&lt;h1 id=&quot;安装手机客户端&quot;&gt;安装手机客户端&lt;/h1&gt;
+&lt;p&gt;可以安装各个类型的ssh客户端到手机上。&lt;/p&gt;
+
+&lt;h1 id=&quot;安装ssh服务器客户端&quot;&gt;安装SSH服务器客户端&lt;/h1&gt;
+&lt;p&gt;一般ubuntu都自带SSH客户端，但是不带SSH服务器端，用以下命令安装：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo apt-get install openssh-server # 启动SSH server
+
+sudo service sshd start # 给手机发消息 在手机上打开SSH软件，登录软件后，在电脑端给手机发消息：
+
+sudo wall '这是一条测试消息' 这样就在手机端接收到了消息。
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;用手机给ubuntu发消息的原理也是一样的。&lt;/p&gt;
+
+&lt;h1 id=&quot;及时结束ssh登录&quot;&gt;及时结束SSH登录&lt;/h1&gt;
+
+&lt;p&gt;用完后及时结束ssh server：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo service sshd stop
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 29 Apr 2020 23:03:00 +0800</pubDate>
+        <link>https://wangzhao.press/2020/04/29/%E5%88%A9%E7%94%A8SSH%E5%AE%9E%E7%8E%B0Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E7%9B%B8%E5%8F%91%E6%B6%88%E6%81%AF%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+        <guid isPermaLink="true">https://wangzhao.press/2020/04/29/%E5%88%A9%E7%94%A8SSH%E5%AE%9E%E7%8E%B0Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E7%9B%B8%E5%8F%91%E6%B6%88%E6%81%AF%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+        
+        <category>Linux</category>
+        
+        <category>即时通讯</category>
+        
+        <category>SSH</category>
+        
+        <category>Ubuntu</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>利用Samba实现Ubuntu和手机传文件</title>
+        <description>&lt;p&gt;Ubuntu和手机传文件很重要，这里分享用Samba配合手机软件实现文件互传&lt;/p&gt;
+
+&lt;h1 id=&quot;1-更新当前软件&quot;&gt;1. 更新当前软件。&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo apt-get upgrade 
+sudo apt-get update 
+sudo apt-get dist-upgrade
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;2-安装samba服务器&quot;&gt;2. 安装samba服务器&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo apt-get install samba samba-common
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;3-创建一个用于分享的samba目录&quot;&gt;3. 创建一个用于分享的samba目录。&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo mkdir /home/linuxidc/linuxidc.com/share
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;4-给创建的这个目录设置权限&quot;&gt;4. 给创建的这个目录设置权限&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo chmod 777 /home/linuxidc/linuxidc.com/share
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;5-添加用户下面的linuxidc是我的用户名之后会需要设置samba的密码&quot;&gt;5. 添加用户(下面的linuxidc是我的用户名，之后会需要设置samba的密码)。&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo smbpasswd -a linuxidc
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;6-配置samba的配置文件&quot;&gt;6. 配置samba的配置文件。&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo nano /etc/samba/smb.conf
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在配置文件smb.conf的最后添加下面的内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;[share]
+comment = share folder
+browseable = yes
+path = /home/linuxidc/linuxidc.com/share
+create mask = 0700
+directory mask = 0700
+valid users = linuxidc
+force user = linuxidc
+force group = linuxidc
+public = yes
+available = yes
+writable = yes
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在上面valid users = linuxidc中的linuxidc为我的用户名。&lt;/p&gt;
+
+&lt;h1 id=&quot;7-重启samba服务器&quot;&gt;7. 重启samba服务器。&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo service smbd restart
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;8-传输文件&quot;&gt;8. 传输文件&lt;/h1&gt;
+
+&lt;p&gt;手机下载支持Samba协议的软件，如FE等，登录就可以看到共享文件夹了。&lt;/p&gt;
+
+&lt;h1 id=&quot;9-及时关闭samba&quot;&gt;9. 及时关闭Samba&lt;/h1&gt;
+
+&lt;p&gt;用完及时关闭Samba，保证安全&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;sudo service smbd stop
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 29 Apr 2020 23:03:00 +0800</pubDate>
+        <link>https://wangzhao.press/2020/04/29/Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/</link>
+        <guid isPermaLink="true">https://wangzhao.press/2020/04/29/Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/</guid>
+        
+        <category>Linux</category>
+        
+        <category>文件共享</category>
+        
+        <category>Samba</category>
+        
+        <category>Ubuntu</category>
+        
+        
+      </item>
     
       <item>
         <title>Jekyll: 添加Valine评论(邮件通知、评论列表头像)</title>

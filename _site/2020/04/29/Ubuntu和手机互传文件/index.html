@@ -21,16 +21,32 @@ var _hmt = _hmt || [];
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="王钊">
+    <meta property="og:title" content="利用Samba实现Ubuntu和手机传文件 - 王钊">
     
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="我们怀念的不是时光，而是时光中的自己">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Ubuntu和手机传文件很重要，这里分享用Samba配合手机软件实现文件互传
+">
+    
+    <meta property="article:published_time" content="2020-04-29T23:03:00Z">
+    
+    
+    <meta property="article:author" content="Zhao Wang">
+    
+    
+    <meta property="article:tag" content="Linux">
+    
+    <meta property="article:tag" content="文件共享">
+    
+    <meta property="article:tag" content="Samba">
+    
+    <meta property="article:tag" content="Ubuntu">
+    
     
     <meta property="og:image" content="https://wangzhao.press/img/img047.jpg">
-    <meta property="og:url" content="https://wangzhao.press/">
+    <meta property="og:url" content="https://wangzhao.press/2020/04/29/Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
     <meta property="og:site_name" content="王钊">
     
-    <title>王钊</title>
+    <title>利用Samba实现Ubuntu和手机传文件 - 王钊</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -39,7 +55,7 @@ var _hmt = _hmt || [];
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://wangzhao.press/">
+    <link rel="canonical" href="https://wangzhao.press/2020/04/29/Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -182,28 +198,56 @@ var _hmt = _hmt || [];
 </script>
 
 
-    <!-- Page Header -->
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home_bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
 
 
 
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home_bg.jpg');
+        background: ;
+    }
 
+    
+</style>
 
+<header class="intro-header" >
 
-
-<header class="intro-header" style="background-image: url('/img/home_bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="site-heading">
-        
-          <h1>Wang Zhao</h1>
-          <span class="subheading">我们怀念的不是时光，而是时光中的自己</span>
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Linux" title="Linux">Linux</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB" title="文件共享">文件共享</a>
+                        
+                        <a class="tag" href="/archive/?tag=Samba" title="Samba">Samba</a>
+                        
+                        <a class="tag" href="/archive/?tag=Ubuntu" title="Ubuntu">Ubuntu</a>
+                        
+                    </div>
+                    <h1>利用Samba实现Ubuntu和手机传文件</h1>
+                    
+                    <h2 class="subheading"></h2>
+                    <span class="meta">Posted by Zhao Wang on April 29, 2020</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
+
+
+
+
 
 
 
@@ -217,248 +261,197 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/2020/04/30/%E4%BD%BF%E7%94%A8360%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8AAI%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%BF%9D%E6%8A%A4%E5%86%85%E5%AE%B9%E4%B8%8B%E8%BD%BD/">
-        <h2 class="post-title">
-            使用360浏览器及AI插件实现保护内容下载
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                最近需要下载一个网站上的受保护内容，然而网站并不想让用户下载。那么可以采用一些技巧实现对内容的下载
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-源内容分析
+                <!-- Multi-Lingual -->
+                
 
-在360浏览器内按F12，打开代码分析窗口，打开SRC标签页，在Files里可以看到加载的内容，源文件应该是PDF，但是网站为了保护内容，传输过来的都是图片，将内容拉到底，让页面完整加载。
+				<p>Ubuntu和手机传文件很重要，这里分享用Samba配合手机软件实现文件互传</p>
 
-插件选择
+<h1 id="1-更新当前软件">1. 更新当前软件。</h1>
 
-360浏览器里有很多图片下载插件，但是很多插件无法识别出所有的图片，这里推...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 30, 2020
-    </p>
-</div>
-<hr>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>sudo apt-get upgrade 
+sudo apt-get update 
+sudo apt-get dist-upgrade
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="post-preview">
-    <a href="/2020/04/29/%E5%88%A9%E7%94%A8SSH%E5%AE%9E%E7%8E%B0Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E7%9B%B8%E5%8F%91%E6%B6%88%E6%81%AF%E7%9A%84%E6%96%B9%E6%B3%95/">
-        <h2 class="post-title">
-            利用SSH实现Ubuntu和手机互相发消息的方法
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                Ubuntu上不能装各种各样的即时通讯软件，并且即使能够用wine，也有各种各样的bug，因此最好的方法就是用原生的方法实现通讯。这里我们采用SSH实现ubuntu与手机的通讯。
+<h1 id="2-安装samba服务器">2. 安装samba服务器</h1>
 
-安装手机客户端
-可以安装各个类型的ssh客户端到手机上。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get install samba samba-common
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-安装SSH服务器客户端
-一般ubuntu都自带SSH客户端，但是不带SSH服务器端，用以下命令安装：
+<h1 id="3-创建一个用于分享的samba目录">3. 创建一个用于分享的samba目录。</h1>
 
-1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo mkdir /home/linuxidc/linuxidc.com/share
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="4-给创建的这个目录设置权限">4. 给创建的这个目录设置权限</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo chmod 777 /home/linuxidc/linuxidc.com/share
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="5-添加用户下面的linuxidc是我的用户名之后会需要设置samba的密码">5. 添加用户(下面的linuxidc是我的用户名，之后会需要设置samba的密码)。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo smbpasswd -a linuxidc
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="6-配置samba的配置文件">6. 配置samba的配置文件。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo nano /etc/samba/smb.conf
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在配置文件smb.conf的最后添加下面的内容：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-sudo apt-get i...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 29, 2020
-    </p>
-</div>
-<hr>
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>[share]
+comment = share folder
+browseable = yes
+path = /home/linuxidc/linuxidc.com/share
+create mask = 0700
+directory mask = 0700
+valid users = linuxidc
+force user = linuxidc
+force group = linuxidc
+public = yes
+available = yes
+writable = yes
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="post-preview">
-    <a href="/2020/04/29/Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
-        <h2 class="post-title">
-            利用Samba实现Ubuntu和手机传文件
-        </h2>
+<p>在上面valid users = linuxidc中的linuxidc为我的用户名。</p>
+
+<h1 id="7-重启samba服务器">7. 重启samba服务器。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo service smbd restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="8-传输文件">8. 传输文件</h1>
+
+<p>手机下载支持Samba协议的软件，如FE等，登录就可以看到共享文件夹了。</p>
+
+<h1 id="9-及时关闭samba">9. 及时关闭Samba</h1>
+
+<p>用完及时关闭Samba，保证安全</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo service smbd stop
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/28/Jekyll-%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA(%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5-%E8%AF%84%E8%AE%BA%E5%88%97%E8%A1%A8%E5%A4%B4%E5%83%8F)/" data-toggle="tooltip" data-placement="top" title="Jekyll: 添加Valine评论(邮件通知、评论列表头像)">
+                        Previous<br>
+                        <span>Jekyll: 添加Valine评论(邮件通知、评论列表头像)</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/29/%E5%88%A9%E7%94%A8SSH%E5%AE%9E%E7%8E%B0Ubuntu%E5%92%8C%E6%89%8B%E6%9C%BA%E4%BA%92%E7%9B%B8%E5%8F%91%E6%B6%88%E6%81%AF%E7%9A%84%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="利用SSH实现Ubuntu和手机互相发消息的方法">
+                        Next<br>
+                        <span>利用SSH实现Ubuntu和手机互相发消息的方法</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
         
-        <div class="post-content-preview">
-            
-                Ubuntu和手机传文件很重要，这里分享用Samba配合手机软件实现文件互传
 
-1. 更新当前软件。
-
-1
-2
-3
-sudo apt-get upgrade 
-sudo apt-get update 
-sudo apt-get dist-upgrade
-
-
-2. 安装samba服务器
-
-1
-sudo apt-get install samba samba-common
-
-
-3. 创建一个用于...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 29, 2020
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2020/04/28/Jekyll-%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA(%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5-%E8%AF%84%E8%AE%BA%E5%88%97%E8%A1%A8%E5%A4%B4%E5%83%8F)/">
-        <h2 class="post-title">
-            Jekyll: 添加Valine评论(邮件通知、评论列表头像)
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                关于 Valine 模块
-之所以选择 Valine 模块，一方面因为 Valine 评论模块延续了Jekyll和Hexo模板简洁的风格，两者匹配得可谓天衣无缝，另一方面国内可选的评论模块有些已经不再支持，有些模块的UI不太喜欢。
-Valine 诞生于2017年8月7日，是一款基于 Leancloud 的快速、简洁且高效的无后端评论系统，支持但不限于静态博客。具有以下特性：
-
-
-  快速
-  ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 28, 2020
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2020/04/27/Vim%E6%8F%92%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/">
-        <h2 class="post-title">
-            Vim插件的应用
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                当没有插件管理器时，Vim 用户必须手动下载 tarball 包形式的插件，并将它们解压到 ~/.vim 目录中。在少量插件的时候可以。但当他们安装更多的插件时，就会变得一团糟。所有插件文件分散在单个目录中，用户无法找到哪个文件属于哪个插件。此外，他们无法找到他们应该删除哪个文件来卸载插件。这时 Vim 插件管理器就可以派上用场。插件管理器将安装插件的文件保存在单独的目录中，因此管理所有插件...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 27, 2020
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2020/04/27/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AD%97%E4%BD%93%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AD%97%E4%BD%93%E7%9A%84%E5%AE%89%E8%A3%85/">
-        <h2 class="post-title">
-            Ubuntu系统字体命令和字体的安装
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                网上的大部分教程都只介绍怎么安装字体，而没有介绍如何安装mkfontscale和mkfontdir这两个命令。所以接下来首先介绍如何安装mkfontscale和mkfontdir命令，然后介绍如何安装(中文)字体。
-安装mkfontscale,mkfontdir和fc-cache命令
-如果运行mkfontscale命令时终端提示mkfontscale: command not found，则...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Zhao Wang on April 27, 2020
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
 
 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img src="/img/img047.jpg" />
-    
-    
-    <p>Life consumes feeling <br> 生活的味道需要反复揣摩</p>
-    
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/wangzhao519">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/aramisw">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-  </div>
-</section>
-
                 <!-- Friends Blog -->
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
 
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
 

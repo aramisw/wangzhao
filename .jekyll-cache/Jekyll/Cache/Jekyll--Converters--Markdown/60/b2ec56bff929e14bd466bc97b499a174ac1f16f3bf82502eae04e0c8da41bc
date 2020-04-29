@@ -1,0 +1,90 @@
+I"3<p>Ubuntu和手机传文件很重要，这里分享用Samba配合手机软件实现文件互传</p>
+
+<h1 id="1-更新当前软件">1. 更新当前软件。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>sudo apt-get upgrade 
+sudo apt-get update 
+sudo apt-get dist-upgrade
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="2-安装samba服务器">2. 安装samba服务器</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get install samba samba-common
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="3-创建一个用于分享的samba目录">3. 创建一个用于分享的samba目录。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo mkdir /home/linuxidc/linuxidc.com/share
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="4-给创建的这个目录设置权限">4. 给创建的这个目录设置权限</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo chmod 777 /home/linuxidc/linuxidc.com/share
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="5-添加用户下面的linuxidc是我的用户名之后会需要设置samba的密码">5. 添加用户(下面的linuxidc是我的用户名，之后会需要设置samba的密码)。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo smbpasswd -a linuxidc
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="6-配置samba的配置文件">6. 配置samba的配置文件。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo nano /etc/samba/smb.conf
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在配置文件smb.conf的最后添加下面的内容：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>[share]
+comment = share folder
+browseable = yes
+path = /home/linuxidc/linuxidc.com/share
+create mask = 0700
+directory mask = 0700
+valid users = linuxidc
+force user = linuxidc
+force group = linuxidc
+public = yes
+available = yes
+writable = yes
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>在上面valid users = linuxidc中的linuxidc为我的用户名。</p>
+
+<h1 id="7-重启samba服务器">7. 重启samba服务器。</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo service smbd restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="8-传输文件">8. 传输文件</h1>
+
+<p>手机下载支持Samba协议的软件，如FE等，登录就可以看到共享文件夹了。</p>
+
+<h1 id="9-及时关闭samba">9. 及时关闭Samba</h1>
+
+<p>用完及时关闭Samba，保证安全</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo service smbd stop
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
