@@ -1,10 +1,10 @@
 # Site settings
 title: Wang Zhao
-SEOTitle: 王钊 | Xidian University | 电子信息对抗与仿真教育部重点实验室 | OMEGA团队核心成员
-header-img: img/home_bg.jpeg
+SEOTitle: 王钊
+header-img: img/home_bg.jpg
 email: wangzhao@xidian.edu.cn
-description: "这是一个脱离低级趣味的网站 | 人工智能会改变世界 | 生活的味道需要反复揣摩"
-keyword: "王钊, WangZhao, 多目标优化, 人工智能, 回忆杀, Python, 深度学习, 计算机视觉"
+description: "工具小屋 | 人工智能会改变世界 | 生活的味道需要反复揣摩"
+keyword: "王钊, Zhao Wang, Linux，编程语言，多目标优化, 人工智能, Python, 深度学习, 计算机视觉"
 url: "https://wangzhao.press"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: wangzhao
+#disqus_username: wangzhao
 
 # Netease settings
 netease_comment: false
@@ -83,7 +83,7 @@ valine:
   appkey: XsTkpgL72eQdtrWCctgUv2Ph # your leancloud app key
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki，v1.4.0+ 已废弃
   verify: false # Verification code，v1.4.0+ 已废弃
-  placeholder: 非Github帐号登录用户，在此处留言 # comment box placeholder
+  placeholder: 请留言 # comment box placeholder
   avatar:   # gravatar style
   guest_info: 昵称,邮件,网址 # custom comment header
   pageSize: 10 # pagination size
@@ -109,7 +109,7 @@ sidebar-avatar: /img/img047.jpg      # use absolute URL, seeing it's used in bot
 
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
+featured-tags: false                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
